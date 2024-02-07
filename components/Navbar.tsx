@@ -5,7 +5,7 @@ import MobileSidebar from "./Mobile-sidebar"
 
 function Navbar() {
     return (
-        <div className="flex items-center p-4 bg-red-200">
+        <div className="flex items-center p-4">
 
             <MobileSidebar />
 

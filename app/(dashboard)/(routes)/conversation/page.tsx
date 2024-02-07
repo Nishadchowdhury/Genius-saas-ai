@@ -16,6 +16,8 @@ import { Loader } from "@/components/Loader";
 
 import { formSchema } from "./constants"
 import { cn } from "@/lib/utils";
+import { UserAvatar } from "@/components/User-avatar";
+import { BotAvatar } from "@/components/Bot-avatar";
 
 
 function Conversation() {
@@ -105,7 +107,7 @@ function Conversation() {
 
                     {isLoading && (
                         <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
-                            <Loa der />
+                            <Loader />
                         </div>
                     )}
 
@@ -122,7 +124,12 @@ function Conversation() {
 
                                     className={cn("p-8 w-full flex items-start gap-x-8 rounded-lg", message.role === 'user' ? "bg-white border border-black/10 " : "bg-muted")}
                                 >
-                                    {message.content}
+                                    {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
+
+                                    <p className="text-sm ">
+                                        {message.content}
+                                    </p>
+
                                 </div>
                             ))
                         }
