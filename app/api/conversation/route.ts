@@ -33,6 +33,7 @@ export async function POST(req: Request) {
       });
     }
 
+
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: messages,
@@ -40,7 +41,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json(response.data.choices[0].message);
   } catch (error: any) {
-    
     console.log("Conversation error :->", error.message);
     return new NextResponse("Internal Error", {
       status: 500,

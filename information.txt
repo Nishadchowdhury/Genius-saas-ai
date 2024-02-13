@@ -1,0 +1,13 @@
+// Database info 
+Host: sql6.freesqldatabase.com
+Database name: sql6683753
+Database user: sql6683753
+Database password: T5M6nv8i4c
+Port number: 3306
+
+//cp DB
+Host: 103.191.241.246
+Database_name: studenta_sass_ai
+Database_user: studenta_sass_ai_DB_user
+Database_password: !z{gokb.VmFZ
+Port_number: 3306
