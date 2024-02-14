@@ -24,10 +24,11 @@ import { Loader } from "@/components/Loader";
 import { Empty } from "@/components/Empty";
 import { UserAvatar } from "@/components/User-avatar";
 import { BotAvatar } from "@/components/Bot-avatar";
+import { useProModal } from "@/hook/use-pro-modal";
 
 const CodePage = () => {
     const router = useRouter();
-    // const proModal = useProModal();
+    const proModal = useProModal();
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -50,7 +51,7 @@ const CodePage = () => {
             form.reset();
         } catch (error: any) {
             if (error?.response?.status === 403) {
-                // proModal.onOpen();
+                proModal.onOpen();
             } else {
                 toast.error("Something went wrong.");
             }

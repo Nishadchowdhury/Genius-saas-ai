@@ -18,12 +18,14 @@ import { formSchema } from "./constants"
 import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/User-avatar";
 import { BotAvatar } from "@/components/Bot-avatar";
+import { useProModal } from "@/hook/use-pro-modal";
 
 
 function Conversation() {
 
     const router = useRouter();
     const [Messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
+    const proModal = useProModal();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -48,8 +50,10 @@ function Conversation() {
 
         } catch (error: any) {
 
-            // TODO: Open pro Model.
-            console.log(error)
+            if (error?.response?.status === 403) {
+                proModal.onOpen()
+            }
+
         } finally {
 
             //it will refresh this server component
