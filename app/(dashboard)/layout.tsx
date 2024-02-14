@@ -10,7 +10,7 @@ async function layout({ children }: {
 
   return (
     <div className="h-full relative text-gray-600">
-      <div className="hidden h-full w-72 md:flex md:flex-col md:fixed md:inset-y-0 z-[80] bg-gray-900">
+      <div className="hidden h-full w-72 md:flex md:flex-col md:fixed md:inset-y-0 bg-gray-900">
         <div className="h-full ">
           <Sidebar apiLimitCount={apiLimitCount} />
         </div>
