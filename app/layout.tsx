@@ -10,8 +10,9 @@ import { CrispProvider } from '@/components/crisp-provider'
 const font = Nunito_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Genius',
+  title: 'Swift',
   description: 'Ai Platform',
+  
 }
 
 export default function RootLayout({

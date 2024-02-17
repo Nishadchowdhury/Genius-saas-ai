@@ -1,15 +1,13 @@
 import { LandingNavbar } from "@/components/landing-navbar";
-import { LandingHero } from "@/components/landing-hero";
-import { LandingContent } from "@/components/landing-content";
+import HeroCards from "@/components/Hero-cards";
 
 const LandingPage = () => {
-  return ( 
-    <div className="h-full ">
+  return (
+    <div className="md:min-h-screen md:max-h-screen md:overflow-hidden ">
       <LandingNavbar />
-      <LandingHero />
-      <LandingContent />
+      <HeroCards />
     </div>
-   );
+  );
 }
- 
+
 export default LandingPage;

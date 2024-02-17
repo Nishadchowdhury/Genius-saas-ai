@@ -1,163 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 html,
-body,
-:root {
+body {
+  display: grid;
   height: 100%;
+  place-items: center;
+  background-color: rgb(205, 0, 92);
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 20 14.3% 4.1%;
-
-    --muted: 60 4.8% 95.9%;
-    --muted-foreground: 25 5.3% 44.7%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
-
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
-
-    --primary: 248 90% 66%;
-    --primary-foreground: 60 9.1% 97.8%;
-
-    --secondary: 60 4.8% 95.9%;
-    --secondary-foreground: 24 9.8% 10%;
-
-    --accent: 60 4.8% 95.9%;
-    --accent-foreground: 24 9.8% 10%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
-
-    --ring: 24 5.4% 63.9%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
-
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 60 9.1% 97.8%;
-
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
-
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-
-    --primary: 248 90% 66%;
-    --primary-foreground: 24 9.8% 10%;
-
-    --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
-
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 60 9.1% 97.8%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
-
-    --ring: 12 6.5% 15.1%;
-  }
+.wrapper {
+  perspective: 1000pxx;
 }
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-.a {
-  padding: 15px 40px;
-  transition: 0.2s;
-  transform: scale(1);
-}
-
-.a .liquid {
-  position: absolute;
-  top: -60px;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
-  z-index: -1;
-  transition: 0.6s;
-}
-
-.a .liquid::after,
-.a .liquid::before {
-  position: absolute;
-  content: "";
-  width: 200%;
-  height: 200%;
-  top: 0;
-  left: 0;
-  transform: translate(-25%, -75%);
-}
-
-.a .liquid::after {
-  border-radius: 45%;
-  background: rgba(20, 20, 20, 1);
-  box-shadow: 0 0 10px 5px #d659b3, inset 0 0 5px #d659b3;
-  animation: animate 5s linear infinite;
-  opacity: 0.8;
-}
-
-.a .liquid::before {
-  border-radius: 40%;
-  box-shadow: 0 0 10px rgba(26, 26, 26, 0.5),
-    inset 0 0 5px rgba(26, 26, 26, 0.5);
-  background: rgba(26, 26, 26, 0.5);
-
-  animation: animate 7s linear infinite;
-}
-
-@keyframes animate {
-  0% {
-    transform: translate(-25%, -75%) rotate(0);
-  }
-  100% {
-    transform: translate(-25%, -75%) rotate(360deg);
-  }
-}
-.a:hover .liquid {
-  top: -120px;
-}
-
-.a:hover {
-  box-shadow: 0 0 5px #d659b3, inset 0 0 5px #d659b3;
-  transition-delay: 0.2s;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* ------------------------------------- card */
-
 .card {
   transform-style: preserve-3d;
   box-shadow: rgba(0, 0, 0, 0) 40px 50px 25px -40px,
@@ -166,7 +23,7 @@ body,
 
 .glass {
   transform-style: preserve-3d;
-  background: linear-gradient(0deg, #e9e9e949 0%, #ffffff84 100%);
+  background: linear-gradient(0deg, #e9e9e949 0%, #fff 100%);
 }
 .content {
   padding: 100px 60px 0px 30px;
@@ -233,6 +90,12 @@ body,
   transition-delay: 1s;
 }
 
+.logo .circle5 span {
+  font-size: 20px;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
 
 .wrapper:hover .card {
   transform: rotate3d(1, 1, 0, 30deg);
