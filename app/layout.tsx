@@ -9,7 +9,7 @@ import { CrispProvider } from '@/components/crisp-provider'
 import { cn } from '@/lib/utils'
 
 
-const font = Ubuntu({ subsets: ['cyrillic'], weight: "400" })
+const font = Ubuntu({ subsets: ['cyrillic'], weight: ['300', "400", '500', '700'] })
 
 export const metadata: Metadata = {
   title: 'Swift',
