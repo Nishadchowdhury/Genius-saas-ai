@@ -1,18 +1,20 @@
 import type { Metadata } from 'next'
-import { Nunito_Sans } from 'next/font/google'
+import { Ubuntu } from 'next/font/google'
 
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import ModalProvider from '@/components/modal-provider'
 import ToasterProvider from '@/components/toaster-provider'
 import { CrispProvider } from '@/components/crisp-provider'
+import { cn } from '@/lib/utils'
 
-const font = Nunito_Sans({ subsets: ['latin'] })
+
+const font = Ubuntu({ subsets: ['cyrillic'], weight: "400" })
 
 export const metadata: Metadata = {
   title: 'Swift',
   description: 'Ai Platform',
-  
+
 }
 
 export default function RootLayout({
@@ -24,7 +26,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <CrispProvider />
-        <body className={font.className}>
+        <body className={cn("text-white", font.className)}>
           <ModalProvider />
           <ToasterProvider />
 
