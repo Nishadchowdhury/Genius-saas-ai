@@ -4,17 +4,18 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from "openai";
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-const openai = new OpenAIApi(configuration);
-
 export async function POST(req: Request) {
+  const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+
+  const openai = new OpenAIApi(configuration);
   try {
     const { userId } = auth();
     const body = await req.json();
-    const { messages } = body;
+    const { messages, apiKey } = body;
+
+    console.log(apiKey);
 
     if (!userId) {
       return new NextResponse("Unauthorized", {
