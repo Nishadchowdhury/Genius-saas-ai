@@ -3,6 +3,7 @@ import { Drawer } from 'vaul';
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowUpRightFromCircle, Facebook, Github, Globe, Linkedin } from "lucide-react";
+import Column from './ui/custom/Column';
 
 function Drawer_Component() {
 
@@ -46,59 +47,29 @@ function Drawer_Component() {
 
 
                                         <div className="flex flex-wrap w-full ">
-                                            <div className="p-2 w-full">
-                                                <a href='https://linkedin.com/in/nishadchowdhury' target="blank" >
-                                                    <div className="bg-blue-600/10 p-4 h-full flex items-center justify-between rounded-md ">
-                                                        <div className="flex items-center justify-center ">
-                                                            <span className='inline-block w-10 h-10 mr-5 p-1 bg-blue-600/10 rounded-md' >  <Linkedin className='w-full h-full text-blue-600' /> </span>
-                                                            <span className="text-blue-600 font-extralight text-center border-b border-spacing-1 border-opacity-10 "> https://linkedin.com/in/nishadchowdhury/ </span>
-                                                        </div>
+                                            <Column
+                                                href='https://linkedin.com/in/nishadchowdhury'
+                                                Icon={Linkedin}
+                                                bgColor='bg-blue-600/10'
+                                                textColor='text-blue-600'
+                                            />
 
-                                                        <span className='flex items-center justify-center w-10 h-10 '> <ArrowUpRightFromCircle className="w-1/2 text-blue-600" /> </span>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                            <Column
+                                                href='https://github.com/Nishadchowdhury'
+                                                Icon={Github}
+                                            />
 
-                                            <div className="p-2 w-full">
-                                                <a href='https://github.com/Nishadchowdhury' target="blank" >
-                                                    <div className="bg-gray-600/10 p-4 h-full flex items-center justify-between rounded-md ">
-                                                        <div className="flex items-center justify-center ">
-                                                            <span className='inline-block w-10 h-10 mr-5 p-1 bg-gray-600/10 rounded-md' >  <Github className='w-full h-full text-gray-600' /> </span>
-                                                            <span className="text-gray-600 font-extralight text-center border-b border-spacing-1 border-opacity-10 "> https://github.com/Nishadchowdhury </span>
-                                                        </div>
+                                            <Column
+                                                href='https://facebook.com/NishadChowdhury.fb'
+                                                Icon={Facebook}
+                                                bgColor='bg-blue-600/10'
+                                                textColor='text-blue-600'
+                                            />
 
-                                                        <span className='flex items-center justify-center w-10 h-10 '> <ArrowUpRightFromCircle className="w-1/2 text-gray-600" /> </span>
-                                                    </div>
-                                                </a>
-                                            </div>
-
-
-                                            <div className="p-2 w-full">
-                                                <a href='https://facebook.com/NishadChowdhury.fb' target="blank" >
-                                                    <div className="bg-blue-600/10 p-4 h-full flex items-center justify-between rounded-md ">
-                                                        <div className="flex items-center justify-center ">
-                                                            <span className='inline-block w-10 h-10 mr-5 p-1 bg-blue-600/10 rounded-md' >  <Facebook className='w-full h-full text-blue-600' /> </span>
-                                                            <span className="text-blue-600 font-extralight text-center border-b border-spacing-1 border-opacity-10 "> https://facebook.com/NishadChowdhury.fb </span>
-                                                        </div>
-
-                                                        <span className='flex items-center justify-center w-10 h-10 '> <ArrowUpRightFromCircle className="w-1/2 text-blue-600" /> </span>
-                                                    </div>
-                                                </a>
-                                            </div>
-
-                                            <div className="p-2 w-full">
-                                                <a href='https://nishadchowdhury.netlify.app' target="blank" >
-                                                    <div className="bg-gray-600/10 p-4 h-full flex items-center justify-between rounded-md ">
-                                                        <div className="flex items-center justify-center ">
-                                                            <span className='inline-block w-10 h-10 mr-5 p-1 bg-gray-600/10 rounded-md' >  <Globe className='w-full h-full text-gray-600' /> </span>
-                                                            <span className="text-gray-600 font-extralight text-center border-b border-spacing-1 border-opacity-10 "> https://nishadchowdhury.netlify.app </span>
-                                                        </div>
-
-                                                        <span className='flex items-center justify-center w-10 h-10 '> <ArrowUpRightFromCircle className="w-1/2 text-gray-600" /> </span>
-                                                    </div>
-                                                </a>
-                                            </div>
-
+                                            <Column
+                                                href='https://nishadchowdhury.netlify.app'
+                                                Icon={Globe}
+                                            />
 
                                         </div>
 

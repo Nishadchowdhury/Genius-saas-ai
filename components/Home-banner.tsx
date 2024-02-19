@@ -95,8 +95,7 @@ function HomeBanner() {
                                 <div className="h-full w-ful  relative mr-auto backdrop-blur rounded-xl" >
                                     <div className="h-12 w-12 -top-4 -left-4 absolute bg-[url(/replicateAi.png)] text-white rounded-3xl p-3
                                 
-                                shadow-[8px_9px_17px_0px_#000000fc]
-                                ">
+                                shadow-[8px_9px_17px_0px_#000000fc]">
                                         <SVG_Replicate />
                                     </div>
 
@@ -143,6 +142,9 @@ function HomeBanner() {
                     </div>
                 </div>
             </div>
+
+
+
             <HomeFooter />
 
         </div>

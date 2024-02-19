@@ -27,7 +27,7 @@ function FreeCounter({ apiLimitCount = 0, isPro = false }: FreeCounterProps) {
         return null;
     }
 
-    if (isPro) {
+    if (isPro || mounted) {
         return null;
     }
 
