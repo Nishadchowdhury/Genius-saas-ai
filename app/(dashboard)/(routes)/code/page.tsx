@@ -42,10 +42,11 @@ const CodePage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
+            const openAI_keys = [JSON.parse(String(localStorage.getItem("OPENAI_API_KEY"))).key]
             const userMessage: ChatCompletionRequestMessage = { role: "user", content: values.prompt };
             const newMessages = [...messages, userMessage];
 
-            const response = await axios.post('/api/code', { messages: newMessages });
+            const response = await axios.post('/api/code', { messages: newMessages, apiKey: openAI_keys[0] });
             setMessages((current) => [...current, userMessage, response.data]);
 
             form.reset();

@@ -39,9 +39,10 @@ const VideoPage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
+            const replicateAi_Tokens = [JSON.parse(String(localStorage.getItem("REPLICATE_API_TOKEN"))).key]
             setVideo(undefined);
 
-            const response = await axios.post('/api/video', values);
+            const response = await axios.post('/api/video', { ...values, apiToken: replicateAi_Tokens[0] });
 
             setVideo(response.data[0]);
             form.reset();

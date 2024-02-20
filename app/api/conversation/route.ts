@@ -5,17 +5,16 @@ import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from "openai";
 
 export async function POST(req: Request) {
-  const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-
-  const openai = new OpenAIApi(configuration);
   try {
     const { userId } = auth();
     const body = await req.json();
     const { messages, apiKey } = body;
 
-    console.log(apiKey);
+    const configuration = new Configuration({
+      apiKey,
+    });
+
+    const openai = new OpenAIApi(configuration);
 
     if (!userId) {
       return new NextResponse("Unauthorized", {
@@ -36,23 +35,23 @@ export async function POST(req: Request) {
       });
     }
 
-    const freeTrial = await checkApiLimit();
-    const isPro = await checkSubscription();
+    // const freeTrial = await checkApiLimit();
+    // const isPro = await checkSubscription();
 
-    if (!freeTrial && !isPro) {
-      return new NextResponse("Free trial has expired.", {
-        status: 403,
-      });
-    }
+    // if (!freeTrial && !isPro) {
+    //   return new NextResponse("Free trial has expired.", {
+    //     status: 403,
+    //   });
+    // }
 
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: messages,
     });
 
-    if (!isPro) {
-      await increaseApiLimit();
-    }
+    // if (!isPro) {
+    //   await increaseApiLimit();
+    // }
 
     return NextResponse.json(response.data.choices[0].message);
   } catch (error: any) {

@@ -44,9 +44,10 @@ const PhotoPage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
+            const openAI_keys = [JSON.parse(String(localStorage.getItem("OPENAI_API_KEY"))).key]
             setPhotos([]);
 
-            const response = await axios.post('/api/image', values);
+            const response = await axios.post('/api/image', { ...values, apiKey: openAI_keys[0] },);
 
             const urls = response.data.map((image: { url: string }) => image.url);
 
