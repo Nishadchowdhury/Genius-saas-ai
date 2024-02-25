@@ -82,9 +82,9 @@ function SettingForms() {
 
     }
 
-    const openAI_keys = [JSON.parse(String(localStorage.getItem("OPENAI_API_KEY"))).key]
+    const openAI_keys = [JSON.parse(String(localStorage.getItem("OPENAI_API_KEY")))?.key]
 
-    const replicateAi_Tokens = [JSON.parse(String(localStorage.getItem("REPLICATE_API_TOKEN"))).key]
+    const replicateAi_Tokens = [JSON.parse(String(localStorage.getItem("REPLICATE_API_TOKEN")))?.key]
 
     return (
         <>

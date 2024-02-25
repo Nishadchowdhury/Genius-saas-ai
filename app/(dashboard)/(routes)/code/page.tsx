@@ -42,7 +42,7 @@ const CodePage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            const openAI_keys = [JSON.parse(String(localStorage.getItem("OPENAI_API_KEY"))).key]
+            const openAI_keys = [JSON.parse(String(localStorage.getItem("OPENAI_API_KEY")))?.key]
             const userMessage: ChatCompletionRequestMessage = { role: "user", content: values.prompt };
             const newMessages = [...messages, userMessage];
 

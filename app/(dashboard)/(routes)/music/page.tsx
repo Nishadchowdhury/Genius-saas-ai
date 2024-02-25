@@ -39,7 +39,7 @@ const MusicPage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            const replicateAi_Tokens = [JSON.parse(String(localStorage.getItem("REPLICATE_API_TOKEN"))).key]
+            const replicateAi_Tokens = [JSON.parse(String(localStorage.getItem("REPLICATE_API_TOKEN")))?.key]
             setMusic(undefined);
 
             const response = await axios.post('/api/music', { ...values, apiToken: replicateAi_Tokens[0] });
