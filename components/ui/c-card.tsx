@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { LucideIcon } from "lucide-react";
+import { ArrowRight, LucideIcon } from "lucide-react";
 import { Button } from "./button";
 import Link from "next/link";
 import Image from "next/image";
@@ -55,10 +55,10 @@ function C_card({ label, Icon, href, color, bgColor, i, }: CcardProps) {
                     <div
                         className="glass absolute inset-[8px] rounded-[55px] rounded-tr-[100%] border-x transition-all duration-500 ease-in-out ">
                         <div className="content pt-24 md:pt-14 pb-0 px-10 md:px-4">
-                            <span className="block font-semibold text-xl md:text-sm ">
+                            <span className="block font-extrabold text-xl md:text-sm ">
                                 {label}
                             </span>
-                            <span className="text text-base md:text-sm block   font-normal  tracking-[1px] mt-5">
+                            <span className="text text-base font-bold md:text-sm block  tracking-[1px] mt-5">
                                 Think as you go and {labelStrings[i]} in reality.
                             </span>
                         </div>
@@ -66,7 +66,7 @@ function C_card({ label, Icon, href, color, bgColor, i, }: CcardProps) {
                         <div
                             className="bottom px-[10px] py-[12px] md:p-0 md:text-sm absolute bottom-5 left-5 right-5 flex items-center justify-between ">
                             <div className=" transition-all duration-200 ease-in-out w-full">
-                                <Image src="/logo.png" className=" grayscale hidden md:inline w-6 h-6 " width={30} height={30} alt="Empty" />
+                                <Image src="/logo.png" className="grayscale hidden md:inline w-6 h-6 " width={30} height={30} alt="Empty" />
                                 <span className="block ">
                                     <Image src="/logo.png" className="inline grayscale md:hidden " width={30} height={30} alt="Empty" /> Start {label}
                                 </span>

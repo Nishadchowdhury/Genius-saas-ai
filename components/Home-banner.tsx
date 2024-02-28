@@ -100,8 +100,8 @@ function HomeBanner() {
                                     </div>
 
                                     <div className="md:pl-10  h-full rounded-xl bg-black/50 flex flex-col items-center justify-center " >
-                                        <h1 className="font-bold text-2xl" > Powered by Open AI</h1>
-                                        <h1 className="font-bold text-base" >Swift uses Open AI in its way to present you with a niche output.</h1>
+                                        <h1 className="font-bold text-2xl" > Powered by Replicate AI</h1>
+                                        <h1 className="font-bold text-base" >Swift uses Replicate AI in its way to present you with a niche output.</h1>
                                     </div>
 
 

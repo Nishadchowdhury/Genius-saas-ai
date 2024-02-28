@@ -8,11 +8,17 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import SVG_Replicate from "@/components/svgs/replicateAi";
 import SVG_OpenAi from "@/components/svgs/openAi";
-import { Plus } from "lucide-react";
+import { ArrowUpRightFromCircle, ArrowUpRightFromCircleIcon, Plus } from "lucide-react";
 import Column from "@/components/ui/custom/Column";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 
 interface localStorageProps {
@@ -108,13 +114,30 @@ function SettingForms() {
                                 )}
 
                             />
-                            <div className="col-span-3 md:col-span-1 rounded-lg flex items-center justify-center" >
-                                <div className="h-10 w-10 bg-[url(/openAi.png)] text-white rounded-xl p-2"
-                                >
-                                    <SVG_OpenAi />
-                                </div>
-                            </div>
 
+
+
+                            <TooltipProvider>
+                                <Tooltip>
+
+                                    <div className="col-span-3 md:col-span-1 rounded-lg flex items-center justify-center" >
+                                        <TooltipTrigger>
+                                            <div className="h-10 w-10 bg-[url(/openAi.png)] text-white rounded-xl p-2"
+                                            >
+                                                <SVG_OpenAi />
+                                            </div>
+                                        </TooltipTrigger>
+                                    </div>
+
+
+                                    <TooltipContent className="bg-slate-700 text-white">
+                                        <a className="flex justify-center items-center gap-3" href="https://platform.openai.com/api-keys" target="_blank" >
+                                            Get Api key
+                                            <ArrowUpRightFromCircleIcon className="w-4 opacity-50" />
+                                        </a>
+                                    </TooltipContent>
+                                </Tooltip>
+                            </TooltipProvider>
                             <Button className="col-span-12 lg:col-span-2 w-full  bg-[url(/openAi.png)]"
                             // disabled={isLoading}
                             >
@@ -163,12 +186,27 @@ function SettingForms() {
                                 )}
 
                             />
-                            <div className="col-span-3 md:col-span-1 rounded-lg flex items-center justify-center" >
-                                <div className="h-10 w-10 bg-[url(/replicateAi.png)] text-white rounded-xl p-2"
-                                >
-                                    <SVG_Replicate />
-                                </div>
-                            </div>
+
+
+                            <TooltipProvider>
+                                <Tooltip>
+                                    <div className="col-span-3 md:col-span-1 rounded-lg flex items-center justify-center" >
+
+                                        <TooltipTrigger>
+                                            <div className="h-10 w-10 bg-[url(/replicateAi.png)] text-white rounded-xl p-2"
+                                            >
+
+                                                <SVG_Replicate />
+                                            </div>
+                                        </TooltipTrigger>
+                                    </div>
+                                    <TooltipContent className="bg-slate-700 text-white">
+                                        <a className="flex justify-center items-center gap-3" href="https://replicate.com/" target="_blank" >Get Api key / Only premium API key accepted.
+
+                                            <ArrowUpRightFromCircleIcon className="w-4 opacity-50" /> </a>
+                                    </TooltipContent>
+                                </Tooltip>
+                            </TooltipProvider>
 
                             <Button className="col-span-12 lg:col-span-2 w-full  bg-[url(/replicateAi.png)]"
                             // disabled={isLoading}
@@ -196,7 +234,7 @@ function SettingForms() {
                     </ScrollArea>
                 </div>
 
-            </div>
+            </div >
         </>
     )
 }
